@@ -32,7 +32,7 @@
   <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
   <script>
     const video = document.getElementById('video');
-const src = "https://shlsakamai4.akamaized.net/hlsorigin/capitalotb_hd_fm_2200/chunklist.m3u8?stream=gulfstream_mbr&cust=TVG&user=&t=1745940803&h=12a51b3a3d0531c4936e1182577ba0b6&type=live";
+const src = "https://fa723fc1b171.us-west-2.playback.live-video.net/api/video/v1/us-west-2.196233775518.channel.iQ63N98btHWQ.m3u8?browser_family=chrome&browser_version=135.0&cdm=wv&os_name=Linux&os_version=undefined&platform=web&player_backend=mediaplayer&player_version=1.31.0&supported_codecs=av1,h264&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzM4NCJ9.eyJhd3M6Y2hhbm5lbC1hcm4iOiJhcm46YXdzOml2czp1cy13ZXN0LTI6MTk2MjMzNzc1NTE4OmNoYW5uZWwvaVE2M045OGJ0SFdRIiwiYXdzOmFjY2Vzcy1jb250cm9sLWFsbG93LW9yaWdpbiI6Imh0dHBzOi8va2ljay5jb20saHR0cHM6Ly93d3cuZ3N0YXRpYy5jb20saHR0cHM6Ly8qLmtpY2subGl2ZSxodHRwczovL3BsYXllci5raWNrLmNvbSxodHRwczovL2FkbWluLmtpY2suY29tLGh0dHBzOi8vYmV0YS5raWNrLmNvbSxodHRwczovL25leHQua2ljay5jb20saHR0cHM6Ly9kYXNoYm9hcmQua2ljay5jb20saHR0cHM6Ly8qLnByZXZpZXcua2ljay5jb20iLCJhd3M6c3RyaWN0LW9yaWdpbi1lbmZvcmNlbWVudCI6ZmFsc2UsImV4cCI6MTc0NTk0MTU2Nn0.Q_puZSvJRm4-XFYkmcC40qSsN3U3IeSpnRQopU_KbZxeHRcwJq6YCNB7d3u51KGq1hw2ZsoutpRPrZ6G90IOwoID4fAOiSNU1EBiPxBDFrXoCNN-1QgbCXlEbW8kKhfq";
 
     if (Hls.isSupported()) {
       const hls = new Hls();
