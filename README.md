@@ -2,37 +2,34 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Reproductor M3U8</title>
+  <title>Reproductor</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body {
-      background-color: #111;
-      color: white;
-      font-family: sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+    html, body {
       margin: 0;
-      flex-direction: column;
+      padding: 0;
+      background-color: black;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
     }
     video {
-      width: 80%;
-      max-width: 800px;
-      border: 2px solid white;
-      border-radius: 10px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   </style>
 </head>
 <body>
-
-  <h2>Reproductor HLS (M3U8)</h2>
   <video id="video" controls autoplay></video>
 
   <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
   <script>
     const video = document.getElementById('video');
-    const videoSrc = "https://sae12.playlist.live-video.net/v1/playlist/CtcFONr5-6DkDgRTwB8f0_xY9hUPWRiNbyuOPLr01pgxOUdMY_in7KLxLd46_LupmdK9MS8xRL7CgpaYR3GyyEkE1fGARS0gJm7klY8d3WIepWen48B2QOrsn3fOOlWdgw0ZoMVOis-fjDkQ3pNf_azzZ6s7Fu1Z4u1LheqZaeQ5EzA28bJMq5AwkwYqgUW3VOi_dlOsL5tItN4iQdKmj3GGpRYBbcEx9n3wFvPQcuKDkWIh-5p7ALONs5F-YogtzfTQPNBUe675aa1L8GnFFiMdn2rdN3hNTvYJzQ5WV623c22-W0Jlq5VbH1SjnTt1pwQzN6tBSslWWBW-XT2qYzDwE4syeGExyXDg-kHy8O9kICNjCtfED3pA6kjroaKvBha1DPVvDZR3GxLSR2-QP5L-s-sHp7uqv2lgXjMkKEkppDud5gXOgK58I0lV8SS2RC6AiGD7qe8qGO0LK3agPWtvP3j4Q5twag5sCJT7KlfM396fjPytdQCEvVhnynt8fZGIZ6xTgaEWD9NeaMjeAJIyTs9vmpz6P3Qj_HvMw5e6hSRO1MQ8UcPbNRaWmjZC4AJK1lj3QqXnEYTKtPRvhXPjc5J-VzmUau3dJXttSLGDa4fMELKy9JKju060yEM2pfEkKduphlij0P9qkHOGIleGdlJ8p48ujsHfSD9oLhBqZKJpiwZZiT9AoStaYhTGbFfi3OX8l4Nci0hTwItsGip3zcncHycaDqGQZSbbnWBsyjU-kkp80xr7g69TovuV9tJvmh1AKf5gqNf97XxYjnwm2BYpWeKaWiwfBZKqo8eHIKgjs2-OKRFX7jBBryHxPThxeawKQkX7UXHFSL4xKbC25_in0BEElsjvqkNTwdSiwYkTuHS2v7R8VfqHlFJ4LxB_1UXQ1QmGVVLyx204LaMUJlzQiDaaT3v_lLfizeZiUacTOzqBYjulUAjfhLRHX3ZQSkUR-T64ZhoMHtM_HHg07Yec_-qfIAEqCXVzLWVhc3QtMjCSDA.m3u8";
+    const videoSrc = "https://sae11.playlist.live-video.net/v1/playlist/CtYF4BttfdRFSowpDOkgpZ9-wuCDI8H8O_avvsKaPMQV35w5F8XDDBo83vV0vfkfpv6P7AWythqdzGIvw9Z18P7jp00imuSg2swL4dj08QzKh1AmpMkspYFDa4EIwzaQD52PCi6Tf_Bs9515H5AXrayAltgnZsy_MU70CmLgTDRFnw4ouRNxIY4P7H0PzQAEleVhc0zafMmVFBC8gvYqhPC8q0-OU3nuSlWQK0HWAV9QLBDWXG3DxktXklZ61HtQSkiwPfEYpkhwS6teBrG-S4fbVky3O7lU7c5xTuk19N6kBCbUiCj1rMHU0YHAQD02Tu-ToG3D6stSoDFCY9LEZdJJVCueNJzISL5FQQgnGW1w2syzRC5uBQVG7BZu1yuxXpGTxKalARc1g_aHfK6KPvGlpErY3LrBdN7KiInt3VUME11Fqe46Icn8OXQFyu7g2z8d7Utxm__PJUiyWcn2bZ0y_r_LHg6Y_UTCQWn76tT206c4pjJQE0ujSRQiGyaCR2F8x4QW-Pk-uQIbD_8e4KBSDd3P84caHx2LVKtxJ3ouhLXtQ3mQsWot95vBc3AHtbhASpSA0qsbiX_sS7YMtRDEY75WAxMa0MQB2WqEAJsl4lcgHB9J3PcABdDJYDQgYzjc736z4VDHrNuamj2v6EM5cuG1UswQQqx7eLPlqvq-SuZzRNG6tYPLhWzWHCy2lHy66RKhXR75N0Njl6GjMFRj9CPm_TpM3D6qGgAEpRd3oOoBe2nu1QwUqhMAz-OddtYRO42zn0f7JLcURDvUyuC9CTpeYOtSfWOS6fNyqfeq5GxYkiYGqofQdHZMdz_Y971VsqIfXDF1B_V18CAz5tOFWCMmh7KiyL3ECOeB6TC1w4X1IVxzUUhkgyKH3Js4-w9iIXaCNyyhY0o_ZVG3nJgmTOqMl0hTacTTc2Jx6v7cI4qWJMOP6fl1lnc-QCprkNXh8wG7outWGgwLtgbp36yKJT2wE_8gASoJdXMtZWFzdC0yMJIM.m3u8";
 
     if (Hls.isSupported()) {
       const hls = new Hls();
